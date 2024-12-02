@@ -152,6 +152,7 @@ class SelectorButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(12), topRight: Radius.circular(12))),
+      useSafeArea: selectorConfig.useBottomSheetSafeArea,
       builder: (BuildContext context) {
         return Stack(children: [
           GestureDetector(
@@ -159,7 +160,7 @@ class SelectorButton extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-                    bottom: MediaQuery.of(context).viewInsets.bottom),
+                bottom: MediaQuery.of(context).viewInsets.bottom),
             child: DraggableScrollableSheet(
               builder: (BuildContext context, ScrollController controller) {
                 return Directionality(
